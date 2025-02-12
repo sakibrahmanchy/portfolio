@@ -183,8 +183,8 @@ export default function Hero() {
               transition={{ delay: 0.5 }}
               className="text-xl text-zinc-600 dark:text-zinc-400 mb-8"
             >
-              7+ years of experience in various fields of software engineering, web engineering and web technologies. 
-              Enthusiastic about developing forward-thinking solutions to tomorrow&apos;s productivity problems.
+              Senior Software Engineer with 7+ years of experience in full-stack development, cloud architecture, and microservices. 
+              Passionate about building scalable solutions and leading engineering teams.
             </motion.p>
 
             <motion.div 

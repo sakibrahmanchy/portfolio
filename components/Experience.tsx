@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    title: "Software Engineer L4 | Supply Gen",
+    title: "Senior Software Engineer L4 | Supply Gen",
     company: "Turing.com",
     period: "August 2021 - Present",
     location: "California, United States (Remote)",
