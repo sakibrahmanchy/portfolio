@@ -71,10 +71,10 @@ const majorSkills = [
 ]
 
 const statsData = [
-  { number: "7+", label: "Years of Experience", delay: 0.2 },
-  { number: "20+", label: "Projects Completed", delay: 0.3 },
-  { number: "10+", label: "Technologies", delay: 0.4 },
-  { number: "3+", label: "Companies", delay: 0.5 },
+  { number: "7+", label: "Years Building Products", delay: 0.2 },
+  { number: "50K+", label: "Users Impacted", delay: 0.3 },
+  { number: "15+", label: "Enterprise Solutions", delay: 0.4 },
+  { number: "99.9%", label: "System Uptime", delay: 0.5 },
 ]
 
 export default function Hero() {
@@ -235,11 +235,11 @@ export default function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="hidden lg:block relative"
+            className="lg:block relative"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-transparent rounded-full blur-3xl opacity-20" />
-            <div className="relative bg-zinc-100 dark:bg-zinc-800/50 rounded-lg p-8">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="relative bg-zinc-100 dark:bg-zinc-800/50 rounded-2xl p-6 md:p-8">
+              <div className="grid grid-cols-2 gap-6">
                 {statsData.map((stat) => (
                   <motion.div
                     key={stat.label}
@@ -247,16 +247,16 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: stat.delay }}
                     whileHover={{ scale: 1.05 }}
-                    className="bg-white dark:bg-zinc-900 p-4 rounded-lg"
+                    className="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
                   >
                     <motion.h3 
-                      className="font-display font-bold text-primary mb-2"
+                      className="font-display font-bold text-3xl md:text-4xl text-primary mb-3"
                       initial={{ scale: 1 }}
                       whileHover={{ scale: 1.1 }}
                     >
                       {stat.number}
                     </motion.h3>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">{stat.label}</p>
+                    <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 font-medium">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
