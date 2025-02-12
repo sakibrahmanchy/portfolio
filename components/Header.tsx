@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 
 export default function Header() {
   return (
@@ -16,6 +15,9 @@ export default function Header() {
             </Link>
             <Link href="#experience" className="hover:text-primary transition-colors">
               Experience
+            </Link>
+            <Link href="#skills" className="hover:text-primary transition-colors">
+              Skills
             </Link>
             <Link href="#projects" className="hover:text-primary transition-colors">
               Projects

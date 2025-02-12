@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Github, ExternalLink } from 'lucide-react'
+import { Github } from 'lucide-react'
 
 const projects = [
   {
@@ -119,7 +119,7 @@ export default function Projects() {
           <h2 className="section-heading">Projects</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <MotionDiv
                 key={project.title}
                 variants={cardVariant}

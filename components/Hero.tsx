@@ -31,7 +31,7 @@ const floatingIcons = [
 ]
 
 const floatingVariant = {
-  initial: (delay: number) => ({
+  initial: () => ({
     y: 0,
     opacity: 0,
     rotate: -10,
@@ -61,35 +61,21 @@ const floatingVariant = {
   }),
 }
 
+const majorSkills = [
+  { name: "React", color: "text-[#61DAFB]" },
+  { name: "Node.js", color: "text-[#339933]" },
+  { name: "TypeScript", color: "text-[#3178C6]" },
+  { name: "AWS", color: "text-[#FF9900]" },
+  { name: "Docker", color: "text-[#2496ED]" },
+  { name: "Kubernetes", color: "text-[#326CE5]" }
+]
+
 const statsData = [
-  { number: "5+", label: "Years of Experience", delay: 0.2 },
+  { number: "7+", label: "Years of Experience", delay: 0.2 },
   { number: "20+", label: "Projects Completed", delay: 0.3 },
   { number: "10+", label: "Technologies", delay: 0.4 },
   { number: "3+", label: "Companies", delay: 0.5 },
 ]
-
-const slideUpVariant = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      delay: delay,
-    }
-  })
-}
-
-const containerVariant = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
-    }
-  }
-}
 
 export default function Hero() {
   const MotionDiv = motion.div
@@ -98,17 +84,17 @@ export default function Hero() {
     <section className="min-h-screen flex items-center pt-20 overflow-hidden relative">
       {/* Floating Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {floatingIcons.map((item, index) => (
+        {floatingIcons.map((item, i) => (
           <motion.div
-            key={index}
+            key={i}
             custom={item.delay}
             variants={floatingVariant}
             initial="initial"
             animate="animate"
             className={`absolute ${item.color} opacity-10`}
             style={{
-              left: `${15 + index * 25}%`,
-              top: `${20 + (index % 2) * 40}%`,
+              left: `${15 + i * 25}%`,
+              top: `${20 + (i % 2) * 40}%`,
             }}
           >
             <item.icon size={40} />
@@ -150,7 +136,7 @@ export default function Hero() {
                 <motion.span
                   className="text-xl sm:text-2xl text-primary font-medium block mb-2"
                 >
-                  Hi there! 👋 I'm Sakibur
+                  Hi there! 👋 I am Sakib
                 </motion.span>
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -158,7 +144,7 @@ export default function Hero() {
                   transition={{ delay: 0.3 }}
                   className="text-sm text-zinc-600 dark:text-zinc-400"
                 >
-                  Fullstack Developer & Cloud Engineer
+                  I&apos;m a Fullstack Developer & Cloud Engineer
                 </motion.div>
               </motion.div>
             </div>
@@ -167,25 +153,44 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-6xl font-display font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70"
+              className="text-4xl md:text-6xl font-display font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70"
             >
-              Fullstack Software Engineer
+              Senior Software Engineer
             </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-wrap gap-2 mb-6"
+            >
+              {majorSkills.map((skill, i) => (
+                <span
+                  key={skill.name}
+                  className={`px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/50 ${skill.color} text-sm font-medium`}
+                  style={{ 
+                    transform: `translateY(${i % 2 * 4}px)` 
+                  }}
+                >
+                  {skill.name}
+                </span>
+              ))}
+            </motion.div>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.5 }}
               className="text-xl text-zinc-600 dark:text-zinc-400 mb-8"
             >
-              5+ years of experience in various fields of software engineering, web engineering and web technologies. 
-              Enthusiastic about developing forward-thinking solutions to tomorrow's productivity problems.
+              7+ years of experience in various fields of software engineering, web engineering and web technologies. 
+              Enthusiastic about developing forward-thinking solutions to tomorrow&apos;s productivity problems.
             </motion.p>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-4"
             >
               <Link 
@@ -206,10 +211,10 @@ export default function Hero() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.7 }}
               className="mt-8 flex items-center gap-4"
             >
-              {socialLinks.map((social, index) => (
+              {socialLinks.map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
@@ -235,7 +240,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-transparent rounded-full blur-3xl opacity-20" />
             <div className="relative bg-zinc-100 dark:bg-zinc-800/50 rounded-lg p-8">
               <div className="grid grid-cols-2 gap-4">
-                {statsData.map((stat, index) => (
+                {statsData.map((stat) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, y: 20 }}

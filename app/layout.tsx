@@ -14,6 +14,30 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata = {
   title: 'Sakibur Rahaman Chowdhury | Fullstack Software Engineer',
   description: 'Fullstack Software Engineer specializing in Node.js, React, and cloud technologies',
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/icon.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/apple-icon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
+    apple: [
+      {
+        url: "/apple-icon.png",
+        sizes: "180x180",
+      },
+    ],
+  },
 }
 
 export default function RootLayout({

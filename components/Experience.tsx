@@ -133,7 +133,7 @@ export default function Experience() {
         >
           <h2 className="section-heading">Experience</h2>
           
-          {experiences.map((exp, index) => (
+          {experiences.map((exp) => (
             <MotionDiv
               key={exp.company + exp.period}
               variants={itemVariant}
