@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Github, Linkedin, Mail, Code, Server, Database, Cloud } from 'lucide-react'
+import { YOE } from '@/lib/constants'
 
 const socialLinks = [
   {
@@ -183,7 +184,7 @@ export default function Hero() {
               transition={{ delay: 0.5 }}
               className="text-xl text-zinc-600 dark:text-zinc-400 mb-8"
             >
-              Senior Software Engineer with 7+ years of experience in full-stack development, cloud architecture, and microservices. 
+              Senior Software Engineer with {YOE}+ years of experience in full-stack development, cloud architecture, and microservices. 
               Passionate about building scalable solutions and leading engineering teams.
             </motion.p>
 

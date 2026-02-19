@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  schemas  = ["courses"]
+}
+
+model CourseSignup {
+  id           String   @id @default(cuid())
+  course_id    String
+  course_title String
+  name         String
+  email        String
+  phone        String?
+  background   String
+  motivation   String
+  experience   String
+  created_at   DateTime @default(now()) @db.Timestamp(6)
+  updated_at   DateTime @default(now()) @db.Timestamp(6)
+
+  @@index([course_id], map: "idx_course_signups_course_id")
+  @@index([email], map: "idx_course_signups_email")
+  @@map("course_signups")
+  @@schema("courses")
+}

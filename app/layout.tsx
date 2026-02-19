@@ -2,6 +2,7 @@ import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import { Metadata } from 'next'
 import StructuredData from './structured-data'
+import { YOE } from '@/lib/constants'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -15,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: 'Sakibur Rahaman | Senior Software Engineer',
-  description: 'Senior Software Engineer with 7+ years of experience in full-stack development, cloud architecture, and microservices. Expertise in React, Node.js, AWS, and Kubernetes.',
+  description: `Senior Software Engineer with ${YOE}+ years of experience in full-stack development, cloud architecture, and microservices. Expertise in React, Node.js, AWS, and Kubernetes.`,
   keywords: [
     'Senior Software Engineer',
     'Full Stack Developer',
