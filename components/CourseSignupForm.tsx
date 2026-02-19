@@ -170,9 +170,11 @@ export default function CourseSignupForm({ courseId, courseTitle }: CourseSignup
     )
   }
 
+  const isSubmitSuccess = submitStatus === 'success'
+
   return (
     <div>
-      {submitStatus === 'success' ? (
+      {isSubmitSuccess ? (
         <div className="space-y-6">
           <div className="p-6 bg-green-50 dark:bg-green-900/20 border-2 border-green-200 dark:border-green-800 rounded-lg">
             <div className="flex items-start gap-4">
@@ -220,7 +222,7 @@ export default function CourseSignupForm({ courseId, courseTitle }: CourseSignup
             id="name"
             name="name"
             required
-            disabled={submitStatus === 'success'}
+            disabled={isSubmitSuccess}
             value={formData.name}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -241,7 +243,7 @@ export default function CourseSignupForm({ courseId, courseTitle }: CourseSignup
             id="email"
             name="email"
             required
-            disabled={submitStatus === 'success'}
+            disabled={isSubmitSuccess}
             value={formData.email}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -261,12 +263,12 @@ export default function CourseSignupForm({ courseId, courseTitle }: CourseSignup
             type="tel"
             id="phone"
             name="phone"
-            disabled={submitStatus === 'success'}
+            disabled={isSubmitSuccess}
             value={formData.phone}
             onChange={handleChange}
             onBlur={handleBlur}
             className={`w-full px-4 py-2 border ${fieldErrors.phone ? 'border-red-500' : 'border-zinc-300 dark:border-zinc-700'} rounded-lg bg-white dark:bg-zinc-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
-            placeholder="01XXXXXXXXX"
+            placeholder="01234567890"
           />
           {fieldErrors.phone && (
             <p className="mt-1 text-sm text-red-500">{fieldErrors.phone}</p>
@@ -281,7 +283,7 @@ export default function CourseSignupForm({ courseId, courseTitle }: CourseSignup
             id="background"
             name="background"
             required
-            disabled={submitStatus === 'success'}
+            disabled={isSubmitSuccess}
             value={formData.background}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -307,7 +309,7 @@ export default function CourseSignupForm({ courseId, courseTitle }: CourseSignup
             id="experience"
             name="experience"
             required
-            disabled={submitStatus === 'success'}
+            disabled={isSubmitSuccess}
             value={formData.experience}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -333,7 +335,7 @@ export default function CourseSignupForm({ courseId, courseTitle }: CourseSignup
             id="motivation"
             name="motivation"
             required
-            disabled={submitStatus === 'success'}
+            disabled={isSubmitSuccess}
             value={formData.motivation}
             onChange={handleChange}
             onBlur={handleBlur}
