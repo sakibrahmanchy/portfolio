@@ -92,8 +92,8 @@ export async function GET(request: NextRequest) {
       },
       select: {
         id: true,
-        course_id: true,
-        course_title: true,
+        // course_id: true,
+        // course_title: true,
         name: true,
         email: true,
         phone: true,
@@ -105,8 +105,8 @@ export async function GET(request: NextRequest) {
     })
 
     return NextResponse.json({ signups, count: signups.length }, { status: 200 })
-  } catch (error: any) {
-    console.error('Error fetching signups:', error.message)
+  } catch (error) {
+    console.error('Error fetching signups:', error instanceof Error ? error.message : 'Unknown error')
     return NextResponse.json(
       { error: 'Failed to fetch signups' },
       { status: 500 }

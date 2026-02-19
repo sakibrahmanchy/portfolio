@@ -1,5 +1,5 @@
-import { PrismaClient } from '../generated/prisma'
-import { PrismaPg } from '@prisma/adapter-pg';
+import { PrismaClient } from '@prisma/client'
+import { PrismaPg } from '@prisma/adapter-pg'
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined
@@ -12,17 +12,11 @@ if (!databaseUrl) {
   throw new Error('DATABASE_URL environment variable is not set')
 }
 
-// For Prisma 7, we pass the database URL through environment variable
-// The client will pick it up from DATABASE_URL automatically
+// For Prisma 7, the client will pick up DATABASE_URL automatically
 export const prisma = globalForPrisma.prisma ?? new PrismaClient({
-  adapter: new PrismaPg({
-    // pool: new pg.Pool({
-      connectionString: databaseUrl
-    // })
-  })
+    adapter: new PrismaPg({
+        connectionString: databaseUrl
+    })
 })
 
-
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
-
-

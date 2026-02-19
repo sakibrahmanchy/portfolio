@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { getCourseBySlug, getAllCourses, Course } from '@/lib/courses'
-import { Calendar, Clock, ArrowLeft, Github, Linkedin, Mail, CreditCard } from 'lucide-react'
+import { ArrowLeft, Github, Linkedin, Mail, CreditCard } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CourseContent from '@/components/CourseContent'
@@ -235,7 +235,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
                 <div className="mt-6 p-4 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg">
                   <h4 className="font-semibold text-sm mb-2">Areas of Exposure</h4>
                   <p className="text-sm text-zinc-700 dark:text-zinc-300">
-                    Throughout the program, you'll gain exposure in: JavaScript internals and language fundamentals, 
+                    Throughout the program, you&apos;ll gain exposure in: JavaScript internals and language fundamentals, 
                     Browser behavior and frontend architecture, Backend systems and networking, Full-stack system design, 
                     and Applied AI concepts.
                   </p>
@@ -256,7 +256,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
             <div className="mb-6">
               <h2 className="text-xl font-display font-bold mb-2">Apply for This Course</h2>
               <p className="text-zinc-600 dark:text-zinc-400">
-                Fill out the form below to express your interest. We'll review your application 
+                Fill out the form below to express your interest. We&apos;ll review your application 
                 and get back to you with next steps.
               </p>
             </div>

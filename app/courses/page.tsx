@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { getAllCourses } from '@/lib/courses'
-import { Calendar, Clock, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 

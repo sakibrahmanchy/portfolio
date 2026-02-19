@@ -186,7 +186,7 @@ export default function CourseSignupForm({ courseId, courseTitle }: CourseSignup
                   Registration Successful!
                 </h3>
                 <p className="text-green-800 dark:text-green-200 mb-4">
-                  Thank you for registering for the free introduction class. We'll contact you shortly with:
+                  Thank you for registering for the free introduction class. We&apos;ll contact you shortly with:
                 </p>
                 <ul className="space-y-2 text-green-800 dark:text-green-200">
                   <li className="flex items-start gap-2">
@@ -203,7 +203,7 @@ export default function CourseSignupForm({ courseId, courseTitle }: CourseSignup
                   </li>
                 </ul>
                 <p className="text-sm text-green-700 dark:text-green-300 mt-4 pt-4 border-t border-green-200 dark:border-green-800">
-                  Check your email (including spam folder) for confirmation. If you don't receive it within 24 hours, please contact us.
+                  Check your email (including spam folder) for confirmation. If you don&apos;t receive it within 24 hours, please contact us.
                 </p>
               </div>
             </div>
@@ -266,7 +266,7 @@ export default function CourseSignupForm({ courseId, courseTitle }: CourseSignup
             onChange={handleChange}
             onBlur={handleBlur}
             className={`w-full px-4 py-2 border ${fieldErrors.phone ? 'border-red-500' : 'border-zinc-300 dark:border-zinc-700'} rounded-lg bg-white dark:bg-zinc-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
-            placeholder="+1 (555) 000-0000"
+            placeholder="01XXXXXXXXX"
           />
           {fieldErrors.phone && (
             <p className="mt-1 text-sm text-red-500">{fieldErrors.phone}</p>
